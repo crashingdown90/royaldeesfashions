@@ -351,7 +351,21 @@ html, body {
 }
 
 .editorial-card:hover {
+  border-color: var(--primary);
   transform: translateY(-5px);
+}
+
+.category-pill {
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.category-pill:hover {
+  border-color: var(--primary);
 }
 
 .editorial-meta {

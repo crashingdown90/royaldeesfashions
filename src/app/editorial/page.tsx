@@ -8,11 +8,29 @@ export const metadata: Metadata = {
 };
 
 export default function EditorialPage() {
+  const uniqueCategories = Array.from(new Set(articles.map(a => a.category)));
+
   return (
     <main className="standard-page">
       <Link href="/" className="back-link">&larr; Back to Home</Link>
       <h1 className="standard-title">All Editorials</h1>
-      <p style={{ textAlign: 'center', color: '#888', marginBottom: '3rem' }}>Explore our complete archive of {articles.length} fashion articles and industry insights.</p>
+      <p style={{ textAlign: 'center', color: '#888', marginBottom: '2rem' }}>Explore our complete archive of {articles.length} fashion articles and industry insights.</p>
+      
+      {/* Category Pills */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem', justifyContent: 'center', marginBottom: '4rem' }}>
+        <span style={{ padding: '0.4rem 1rem', border: '1px solid var(--primary)', color: '#000', backgroundColor: 'var(--primary)', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 'bold' }}>
+          All
+        </span>
+        {uniqueCategories.map(cat => (
+          <Link 
+            key={cat} 
+            href={`/category/${cat.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')}`}
+            className="category-pill"
+          >
+            {cat}
+          </Link>
+        ))}
+      </div>
       
       <div className="editorial-grid">
         {articles.map((article) => (
