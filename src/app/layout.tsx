@@ -3,6 +3,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import CookieBanner from "@/components/CookieBanner";
+import BackToTop from "@/components/BackToTop";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -63,8 +64,11 @@ export default function RootLayout({
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <body>
         <Navbar />
-        {children}
+        <div className="page-transition-wrapper">
+          {children}
+        </div>
         <CookieBanner />
+        <BackToTop />
         <footer className="site-footer">
           <div className="footer-links">
             <Link href="/about">About Us</Link>
