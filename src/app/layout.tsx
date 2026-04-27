@@ -48,6 +48,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://royaldeesfashion.com",
   },
+  verification: {
+    google: "6wq9oN747gTzQnBHzAHHPwItmED6QLHOn093c4_iFWc",
+  },
 };
 
 export default function RootLayout({
