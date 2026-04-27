@@ -1,4 +1,5 @@
 import { articlesBatch2 } from './articles_batch_2';
+import { articlesBatch3 } from './articles_batch_3';
 
 export interface Article {
   slug: string;
@@ -195,5 +196,5 @@ const baseArticles: Article[] = [
   }
 ];
 
-export const articles = [...baseArticles, ...articlesBatch2];
+export const articles = [...baseArticles, ...articlesBatch2, ...articlesBatch3];
 
