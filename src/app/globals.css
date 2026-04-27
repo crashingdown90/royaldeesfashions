@@ -525,6 +525,13 @@ html, body {
   min-height: 100vh;
 }
 
+.magazine-page {
+  padding: 10rem 5% 5rem;
+  max-width: 1600px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
 .standard-title {
   font-family: var(--font-serif);
   font-size: 3.5rem;

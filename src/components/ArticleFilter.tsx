@@ -21,7 +21,7 @@ export default function ArticleFilter({ initialArticles }: { initialArticles: Ar
   }, [searchQuery, selectedCategory, initialArticles]);
 
   return (
-    <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
+    <div style={{ width: '100%', margin: '0 auto' }}>
       {/* High-End Filter Controls */}
       <div style={{ 
         display: 'flex', 

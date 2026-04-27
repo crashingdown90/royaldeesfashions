@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function EditorialPage() {
   return (
-    <main className="standard-page">
+    <main className="magazine-page">
       <Link href="/" className="back-link">&larr; Back to Home</Link>
       <h1 className="standard-title">All Editorials</h1>
       <p style={{ textAlign: 'center', color: '#888', marginBottom: '2rem' }}>Explore our complete archive of {articles.length} fashion articles and industry insights.</p>

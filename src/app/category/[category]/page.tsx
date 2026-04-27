@@ -42,7 +42,7 @@ export default async function CategoryPage({ params }: Props) {
   const displayCategory = categoryArticles[0].category;
 
   return (
-    <main className="standard-page">
+    <main className="magazine-page">
       <Link href="/editorial" className="back-link">&larr; Back to All Editorials</Link>
       <h1 className="standard-title">{displayCategory}</h1>
       <p style={{ textAlign: 'center', color: '#888', marginBottom: '3rem' }}>
