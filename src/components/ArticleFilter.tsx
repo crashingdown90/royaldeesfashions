@@ -21,66 +21,82 @@ export default function ArticleFilter({ initialArticles }: { initialArticles: Ar
   }, [searchQuery, selectedCategory, initialArticles]);
 
   return (
-    <div>
-      {/* Filter Controls */}
+    <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
+      {/* High-End Filter Controls */}
       <div style={{ 
         display: 'flex', 
         flexDirection: 'row', 
-        gap: '1rem', 
-        marginBottom: '3rem', 
-        background: 'rgba(255,255,255,0.03)', 
-        padding: '1.5rem', 
-        borderRadius: '12px',
-        border: '1px solid rgba(255,255,255,0.1)',
-        flexWrap: 'wrap'
+        gap: '2rem', 
+        marginBottom: '4rem', 
+        paddingBottom: '2rem',
+        borderBottom: '1px solid rgba(255,255,255,0.1)',
+        flexWrap: 'wrap',
+        alignItems: 'flex-end'
       }}>
         {/* Search Bar */}
-        <div style={{ flex: '1 1 300px', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-          <label style={{ fontSize: '0.85rem', color: '#aaa', textTransform: 'uppercase', letterSpacing: '1px' }}>Search Editorials</label>
+        <div style={{ flex: '2 1 400px', position: 'relative' }}>
+          <label style={{ display: 'block', fontSize: '0.75rem', color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '0.8rem', fontWeight: 'bold' }}>
+            Discover Topics
+          </label>
           <input 
             type="text" 
-            placeholder="Type keywords..." 
+            placeholder="Search our editorial archive..." 
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             style={{ 
               width: '100%', 
-              padding: '0.8rem 1rem', 
+              padding: '1rem 0', 
               background: 'transparent', 
-              border: '1px solid rgba(255,255,255,0.2)', 
+              border: 'none',
+              borderBottom: '1px solid rgba(255,255,255,0.3)', 
               color: '#fff', 
-              borderRadius: '6px',
-              fontFamily: 'var(--font-inter)'
+              fontSize: '1.2rem',
+              fontFamily: 'var(--font-serif)',
+              outline: 'none',
+              transition: 'border-color 0.3s ease'
             }}
+            onFocus={(e) => e.target.style.borderBottom = '1px solid var(--primary)'}
+            onBlur={(e) => e.target.style.borderBottom = '1px solid rgba(255,255,255,0.3)'}
           />
         </div>
 
         {/* Category Dropdown */}
-        <div style={{ flex: '1 1 200px', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-          <label style={{ fontSize: '0.85rem', color: '#aaa', textTransform: 'uppercase', letterSpacing: '1px' }}>Filter by Category</label>
+        <div style={{ flex: '1 1 250px' }}>
+          <label style={{ display: 'block', fontSize: '0.75rem', color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '0.8rem', fontWeight: 'bold' }}>
+            Curated Categories
+          </label>
           <select 
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
             style={{ 
               width: '100%', 
-              padding: '0.8rem 1rem', 
-              background: '#111', 
-              border: '1px solid rgba(255,255,255,0.2)', 
+              padding: '1rem 0', 
+              background: 'transparent', 
+              border: 'none',
+              borderBottom: '1px solid rgba(255,255,255,0.3)', 
               color: '#fff', 
-              borderRadius: '6px',
+              fontSize: '1.1rem',
               fontFamily: 'var(--font-inter)',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              outline: 'none',
+              appearance: 'none',
             }}
           >
             {uniqueCategories.map(cat => (
-              <option key={cat} value={cat}>{cat}</option>
+              <option key={cat} value={cat} style={{ background: '#0a0a0a', color: '#fff', padding: '1rem' }}>{cat}</option>
             ))}
           </select>
         </div>
       </div>
 
       {/* Results Header */}
-      <div style={{ marginBottom: '2rem', color: '#888', fontSize: '0.9rem' }}>
-        Showing {filteredArticles.length} {filteredArticles.length === 1 ? 'result' : 'results'}
+      <div style={{ marginBottom: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2rem', margin: 0 }}>
+          {selectedCategory === "All" ? "Latest Editorials" : `${selectedCategory}`}
+        </h2>
+        <span style={{ color: 'var(--primary)', fontSize: '0.9rem', letterSpacing: '1px', textTransform: 'uppercase' }}>
+          [{filteredArticles.length} {filteredArticles.length === 1 ? 'Article' : 'Articles'}]
+        </span>
       </div>
 
       {/* Filtered Grid */}
@@ -99,15 +115,16 @@ export default function ArticleFilter({ initialArticles }: { initialArticles: Ar
           ))}
         </div>
       ) : (
-        <div style={{ textAlign: 'center', padding: '4rem 0', color: '#aaa' }}>
-          <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.5rem', marginBottom: '1rem', color: '#fff' }}>No articles found</h3>
-          <p>We couldn't find any editorials matching your search criteria. Please try different keywords or categories.</p>
+        <div style={{ textAlign: 'center', padding: '6rem 0', color: '#aaa', border: '1px dashed rgba(255,255,255,0.1)', borderRadius: '12px' }}>
+          <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '2rem', marginBottom: '1rem', color: '#fff' }}>Archive Empty</h3>
+          <p style={{ fontSize: '1.1rem', maxWidth: '400px', margin: '0 auto 2rem auto', lineHeight: '1.6' }}>
+            We couldn't find any editorials matching your exquisite taste. Please adjust your search criteria.
+          </p>
           <button 
             onClick={() => { setSearchQuery(""); setSelectedCategory("All"); }}
             className="cta-button"
-            style={{ marginTop: '2rem' }}
           >
-            Reset Filters
+            Reset Collection
           </button>
         </div>
       )}
