@@ -2,6 +2,7 @@ import { articles } from "@/data/articles";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Metadata } from "next";
+import ProgressBar from "@/components/ProgressBar";
 
 export async function generateStaticParams() {
   return articles.map((article) => ({
@@ -23,11 +24,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       type: "article",
       publishedTime: new Date(article.date).toISOString(),
       authors: [article.author],
+      images: [
+        {
+          url: "https://royaldeesfashion.com/hero_fashion.png",
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: article.title,
       description: article.excerpt,
+      images: ["https://royaldeesfashion.com/hero_fashion.png"],
     },
     alternates: {
       canonical: `https://royaldeesfashion.com/editorial/${article.slug}`,
@@ -43,16 +53,17 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     notFound();
   }
 
+  // Generate JSON-LD for SEO
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: article.title,
-    description: article.excerpt,
+    image: ['https://royaldeesfashion.com/hero_fashion.png'],
+    datePublished: new Date(article.date).toISOString(),
     author: {
       '@type': 'Person',
       name: article.author,
     },
-    datePublished: new Date(article.date).toISOString(),
     publisher: {
       '@type': 'Organization',
       name: 'Royal Dees Fashion',
@@ -65,6 +76,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
   return (
     <main className="article-page">
+      <ProgressBar />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
