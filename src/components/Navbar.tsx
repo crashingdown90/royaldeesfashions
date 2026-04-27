@@ -20,7 +20,7 @@ export default function Navbar() {
       {/* Desktop Menu */}
       <ul className="nav-links">
         <li><Link href="/#collections">Collections</Link></li>
-        <li><Link href="/#editorial">Editorial</Link></li>
+        <li><Link href="/editorial">Editorial</Link></li>
         <li><Link href="/about">House</Link></li>
       </ul>
 
@@ -35,7 +35,7 @@ export default function Navbar() {
       <div className={`mobile-menu ${isOpen ? "active" : ""}`}>
         <div className="mobile-menu-content">
           <Link href="/#collections" onClick={() => setIsOpen(false)}>Collections</Link>
-          <Link href="/#editorial" onClick={() => setIsOpen(false)}>Editorial</Link>
+          <Link href="/editorial" onClick={() => setIsOpen(false)}>Editorial</Link>
           <Link href="/about" onClick={() => setIsOpen(false)}>House</Link>
         </div>
       </div>
