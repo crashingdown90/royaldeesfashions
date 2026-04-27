@@ -46,7 +46,7 @@ export default function Home() {
       <section id="editorial" className="editorial-section">
         <h2 className="section-title">The Magazine</h2>
         <div className="editorial-grid">
-          {articles.map((article) => (
+          {articles.slice(0, 6).map((article) => (
             <Link href={`/editorial/${article.slug}`} key={article.slug} className="editorial-card">
               <div className="editorial-meta">
                 <span className="editorial-category">{article.category}</span>
@@ -57,6 +57,9 @@ export default function Home() {
               <span className="editorial-read-more">Read Article &rarr;</span>
             </Link>
           ))}
+        </div>
+        <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+          <Link href="/editorial" className="cta-button" style={{ display: 'inline-block' }}>View All Editorials</Link>
         </div>
       </section>
 

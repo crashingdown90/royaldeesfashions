@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import CookieBanner from "@/components/CookieBanner";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -63,6 +64,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         {children}
+        <CookieBanner />
         <footer className="site-footer">
           <div className="footer-links">
             <Link href="/about">About Us</Link>

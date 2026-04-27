@@ -93,7 +93,23 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           className="article-content" 
           dangerouslySetInnerHTML={{ __html: article.content.replace(/\n\n/g, '<br/><br/>').replace(/^\n/, '') }} 
         />
-        <div style={{ marginTop: '4rem', paddingBottom: '2rem', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+        
+        {/* Author Box for E-E-A-T */}
+        <div style={{ marginTop: '3rem', padding: '2rem', background: 'rgba(255,255,255,0.03)', borderRadius: '8px', display: 'flex', gap: '1.5rem', alignItems: 'center', border: '1px solid rgba(255,255,255,0.1)' }}>
+          <img 
+            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" 
+            alt={article.author}
+            style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', border: '2px solid var(--primary)' }}
+          />
+          <div>
+            <h4 style={{ margin: '0 0 0.5rem 0', fontFamily: 'var(--font-serif)', fontSize: '1.2rem', color: 'var(--primary)' }}>Written by {article.author}</h4>
+            <p style={{ margin: 0, fontSize: '0.9rem', color: '#aaa', lineHeight: '1.5' }}>
+              {article.author} is a senior fashion journalist and trend analyst with over a decade of experience covering haute couture, luxury markets, and the intersection of modern streetwear. Based in Paris and Milan.
+            </p>
+          </div>
+        </div>
+
+        <div style={{ marginTop: '2rem', paddingBottom: '2rem', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
           <h4 style={{ fontFamily: 'var(--font-serif)', color: 'var(--primary)', marginBottom: '1rem' }}>Share this article</h4>
           <div style={{ display: 'flex', gap: '1rem' }}>
             <button style={{ padding: '0.5rem 1rem', background: 'transparent', border: '1px solid rgba(255,255,255,0.2)', color: '#fff', cursor: 'pointer' }}>Twitter</button>
