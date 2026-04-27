@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -56,22 +58,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <body>
-        <nav className="navbar">
-          <div className="nav-brand">Royal Dees</div>
-          <ul className="nav-links">
-            <li><a href="#collections">Collections</a></li>
-            <li><a href="#editorial">Editorial</a></li>
-            <li><a href="#about">House</a></li>
-          </ul>
-        </nav>
+        <Navbar />
         {children}
         <footer className="site-footer">
           <div className="footer-links">
-            <a href="/about">About Us</a>
-            <a href="/contact">Contact</a>
-            <a href="/privacy-policy">Privacy Policy</a>
-            <a href="/terms-and-conditions">Terms & Conditions</a>
-            <a href="/disclaimer">Disclaimer</a>
+            <Link href="/about">About Us</Link>
+            <Link href="/contact">Contact</Link>
+            <Link href="/privacy-policy">Privacy Policy</Link>
+            <Link href="/terms-and-conditions">Terms & Conditions</Link>
+            <Link href="/disclaimer">Disclaimer</Link>
           </div>
           <p className="footer-copyright">&copy; {new Date().getFullYear()} Royal Dees Fashion. All rights reserved.</p>
         </footer>
