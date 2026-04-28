@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       authors: [article.author],
       images: [
         {
-          url: "https://royaldeesfashion.com/hero_fashion.png",
+          url: "https://www.royaldeesfashions.com/hero_fashion.png",
           width: 1200,
           height: 630,
           alt: article.title,
@@ -37,10 +37,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       card: "summary_large_image",
       title: article.title,
       description: article.excerpt,
-      images: ["https://royaldeesfashion.com/hero_fashion.png"],
+      images: ["https://www.royaldeesfashions.com/hero_fashion.png"],
     },
     alternates: {
-      canonical: `https://royaldeesfashion.com/editorial/${article.slug}`,
+      canonical: `https://www.royaldeesfashions.com/editorial/${article.slug}`,
     }
   };
 }
@@ -58,7 +58,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: article.title,
-    image: ['https://royaldeesfashion.com/hero_fashion.png'],
+    image: ['https://www.royaldeesfashions.com/hero_fashion.png'],
     datePublished: new Date(article.date).toISOString(),
     author: {
       '@type': 'Person',
@@ -69,7 +69,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       name: 'Royal Dees Fashion',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://royaldeesfashion.com/next.svg',
+        url: 'https://www.royaldeesfashions.com/next.svg',
       },
     },
   };

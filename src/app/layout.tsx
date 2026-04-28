@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://royaldeesfashion.com"),
+  metadataBase: new URL("https://www.royaldeesfashions.com"),
   title: {
     default: "Royal Dees Fashion | Premium Elegance",
     template: "%s | Royal Dees Fashion"
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Royal Dees Fashion | Premium Elegance",
     description: "Discover the latest in high-end fashion, exclusive collections, and editorial trends.",
-    url: "https://royaldeesfashion.com",
+    url: "https://www.royaldeesfashions.com",
     siteName: "Royal Dees Fashion",
     images: [
       {
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     images: ["/hero_fashion.png"],
   },
   alternates: {
-    canonical: "https://royaldeesfashion.com",
+    canonical: "https://www.royaldeesfashions.com",
   },
   verification: {
     google: "6wq9oN747gTzQnBHzAHHPwItmED6QLHOn093c4_iFWc",

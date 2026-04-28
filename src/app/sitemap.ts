@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { articles } from '@/data/articles';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://royaldeesfashion.com';
+  const baseUrl = 'https://www.royaldeesfashions.com';
 
   const articleUrls = articles.map((article) => ({
     url: `${baseUrl}/editorial/${article.slug}`,

@@ -21,7 +21,7 @@ export default function ContactUs() {
           <ul style={{ listStyle: 'none', padding: 0 }}>
             <li style={{ marginBottom: '1rem', display: 'flex', gap: '1rem' }}>
               <strong style={{ color: 'var(--primary)', width: '80px' }}>Email:</strong> 
-              <span>contact@royaldeesfashion.com</span>
+              <span>contact@royaldeesfashions.com</span>
             </li>
             <li style={{ marginBottom: '1rem', display: 'flex', gap: '1rem' }}>
               <strong style={{ color: 'var(--primary)', width: '80px' }}>Phone:</strong> 
