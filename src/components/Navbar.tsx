@@ -19,9 +19,12 @@ export default function Navbar() {
       
       {/* Desktop Menu */}
       <ul className="nav-links">
-        <li><Link href="/#collections">Collections</Link></li>
+        <li><Link href="/">Home</Link></li>
         <li><Link href="/editorial">Editorial</Link></li>
-        <li><Link href="/about">House</Link></li>
+        <li><Link href="/category/style-guide">Style Guide</Link></li>
+        <li><Link href="/category/sustainability">Sustainability</Link></li>
+        <li><Link href="/about">About Us</Link></li>
+        <li><Link href="/contact">Contact</Link></li>
       </ul>
 
       {/* Hamburger Icon */}
@@ -34,9 +37,12 @@ export default function Navbar() {
       {/* Mobile Menu Overlay */}
       <div className={`mobile-menu ${isOpen ? "active" : ""}`}>
         <div className="mobile-menu-content">
-          <Link href="/#collections" onClick={() => setIsOpen(false)}>Collections</Link>
+          <Link href="/" onClick={() => setIsOpen(false)}>Home</Link>
           <Link href="/editorial" onClick={() => setIsOpen(false)}>Editorial</Link>
-          <Link href="/about" onClick={() => setIsOpen(false)}>House</Link>
+          <Link href="/category/style-guide" onClick={() => setIsOpen(false)}>Style Guide</Link>
+          <Link href="/category/sustainability" onClick={() => setIsOpen(false)}>Sustainability</Link>
+          <Link href="/about" onClick={() => setIsOpen(false)}>About Us</Link>
+          <Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
         </div>
       </div>
     </nav>
