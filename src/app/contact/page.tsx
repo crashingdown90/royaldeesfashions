@@ -4,6 +4,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact Us",
   description: "Get in touch with the Royal Dees Fashion editorial team for inquiries, tips, and collaborations.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactUs() {

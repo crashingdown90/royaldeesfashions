@@ -1,4 +1,13 @@
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms and Conditions | Royal Dees Fashion",
+  description: "Read the rules, terms, and conditions for using the Royal Dees Fashion website.",
+  alternates: {
+    canonical: "/terms-and-conditions",
+  },
+};
 
 export default function TermsAndConditions() {
   return (

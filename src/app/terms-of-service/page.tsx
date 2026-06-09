@@ -3,6 +3,9 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Terms of Service | Royal Dees Fashion',
   description: 'Terms of Service page for Royal Dees Fashion, a premium fashion and style magazine.',
+  alternates: {
+    canonical: "/terms-of-service",
+  },
 };
 
 export default function TermsofServicePage() {

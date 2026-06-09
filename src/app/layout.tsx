@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import CookieBanner from "@/components/CookieBanner";
 import BackToTop from "@/components/BackToTop";
+import Script from "next/script";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -47,11 +48,11 @@ export const metadata: Metadata = {
     description: "Discover the latest in high-end fashion, exclusive collections, and editorial trends.",
     images: ["/hero_fashion.png"],
   },
-  alternates: {
-    canonical: "https://www.royaldeesfashions.com",
-  },
   verification: {
     google: "6wq9oN747gTzQnBHzAHHPwItmED6QLHOn093c4_iFWc",
+  },
+  other: {
+    "google-adsense-account": "ca-pub-9806436984867634",
   },
 };
 
@@ -63,6 +64,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <body>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9806436984867634"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <Navbar />
         <div className="page-transition-wrapper">
           {children}

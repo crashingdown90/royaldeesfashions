@@ -1,4 +1,13 @@
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Royal Dees Fashion",
+  description: "Learn how Royal Dees Fashion collects, uses, and protects your personal data.",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
+};
 
 export default function PrivacyPolicy() {
   return (

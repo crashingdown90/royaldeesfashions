@@ -1,4 +1,13 @@
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Disclaimer | Royal Dees Fashion",
+  description: "Read the legal disclaimers for Royal Dees Fashion website and editorial content.",
+  alternates: {
+    canonical: "/disclaimer",
+  },
+};
 
 export default function Disclaimer() {
   return (

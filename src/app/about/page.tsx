@@ -4,6 +4,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About Our House",
   description: "Learn about the history, vision, and editorial team behind Royal Dees Fashion.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function AboutUs() {

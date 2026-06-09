@@ -6,6 +6,9 @@ import ArticleFilter from "@/components/ArticleFilter";
 export const metadata: Metadata = {
   title: "All Editorials",
   description: "Browse the complete archive of Royal Dees Fashion editorial pieces, trend analyses, and style guides.",
+  alternates: {
+    canonical: "/editorial",
+  },
 };
 
 export default function EditorialPage() {

@@ -4,6 +4,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Meet Our Editorial Team",
   description: "Get to know the passionate journalists, trend analysts, and fashion experts behind Royal Dees Fashion.",
+  alternates: {
+    canonical: "/our-team",
+  },
 };
 
 const teamMembers = [
