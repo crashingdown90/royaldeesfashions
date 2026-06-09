@@ -64,11 +64,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <body>
-        <Script
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9806436984867634"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
         />
         <Navbar />
         <div className="page-transition-wrapper">
